@@ -2,10 +2,9 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Quiénes Somos - MiSitio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - MiSitio</title>
     <style>
         /* -------- RESET -------- */
         * {
@@ -67,7 +66,7 @@
             cursor: pointer;
         }
 
-        /* -------- CONTENIDO -------- */
+        /* -------- MAIN -------- */
         main {
             flex: 1;
             display: flex;
@@ -76,47 +75,78 @@
             justify-content: center;
             padding: 50px 20px;
             text-align: center;
-            animation: fadeIn 1.5s ease;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1 {
-            font-size: 3rem;
+        main h1 {
+            font-size: 2.8rem;
             background: linear-gradient(90deg, #00d8ff, #00ffaa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
-        article {
-            max-width: 700px;
+        .contact-container {
             background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
             border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            color: #ddd;
-            line-height: 1.7;
-            font-size: 1.1rem;
         }
 
-        article p {
-            margin-bottom: 10px;
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .highlight {
-            color: #00ffaa;
+        input,
+        textarea {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 8px #00ffaa;
+        }
+
+        textarea {
+            resize: none;
+            height: 120px;
+        }
+
+        .btn-enviar {
+            background: linear-gradient(90deg, #00d8ff, #00ffaa);
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            color: #000;
             font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-enviar:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #00ffaa, #00d8ff);
+        }
+
+        .info-contacto {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .info-contacto p {
+            margin-bottom: 8px;
         }
 
         /* -------- FOOTER -------- */
@@ -149,15 +179,6 @@
             .menu-toggle {
                 display: block;
             }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            article {
-                font-size: 1rem;
-                padding: 20px;
-            }
         }
     </style>
 </head>
@@ -172,37 +193,34 @@
                 <li><a href="/servicios">Servicios</a></li>
                 <li><a href="/productos">Productos</a></li>
                 <li><a href="/ubicacion">Ubicación</a></li>
-                <li><a href="/contacto">Contacto</a></li>
-                <li><a href="/quienes-somos" style="color:#00ffaa;">Quiénes Somos</a></li>
+                <li><a href="/contacto" style="color:#00ffaa;">Contacto</a></li>
             </ul>
-
         </nav>
+
     </header>
 
     <main>
-        <h1>Quiénes Somos</h1>
-        <article>
-            <p>
-                Bienvenidos a <span class="highlight">SENATI 2025</span>, una institución líder dedicada a la formación
-                técnica profesional
-                con excelencia, innovación y compromiso hacia el desarrollo del país.
-            </p>
-            <p>
-                Nuestro objetivo es formar profesionales altamente capacitados, éticos y preparados para los retos del
-                futuro.
-                Combinamos la enseñanza práctica con la tecnología más avanzada para garantizar una educación moderna y
-                de calidad.
-            </p>
-            <p>
-                En <span class="highlight">SENATI</span> creemos en el poder del conocimiento, la disciplina y la pasión
-                por crear un
-                futuro mejor para todos.
-            </p>
-        </article>
+        <h1>Contáctanos</h1>
+
+        <div class="contact-container">
+            <form action="#" method="post">
+                <input type="text" name="nombre" placeholder="Tu nombre" required />
+                <input type="email" name="email" placeholder="Tu correo electrónico" required />
+                <input type="text" name="asunto" placeholder="Asunto" required />
+                <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+
+            <div class="info-contacto">
+                <p>📞 Teléfono: +34 600 123 456</p>
+                <p>📧 Correo: contacto@misitio.com</p>
+                <p>📍 Dirección: Calle Principal 123, Ciudad, País</p>
+            </div>
+        </div>
     </main>
 
     <footer>
-        © 2025 SENATI - Todos los derechos reservados.
+        © 2025 MiSitio - Todos los derechos reservados.
     </footer>
 
     <script>
